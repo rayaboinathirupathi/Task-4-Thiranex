@@ -1,44 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Weather Dashboard</title>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7f6;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+.dashboard-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
 
-  <div class="container">
+h1 { color: #333; margin-bottom: 20px; }
 
-    <h1>Weather Dashboard</h1>
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
 
-    <div class="search-box">
-      <input type="text" id="cityInput" placeholder="Enter city name">
-      <button id="searchBtn">Search</button>
-    </div>
+.search-form input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
 
-    <div id="loading" class="loading hidden">
-      Loading weather...
-    </div>
+.search-form button {
+    padding: 12px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-    <div id="error" class="error hidden"></div>
+.search-form button:hover { background: #0056b3; }
 
-    <div id="weatherCard" class="weather-card hidden">
+.weather-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+}
 
-      <h2 id="cityName"></h2>
+.weather-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
 
-      <div class="weather-info">
-        <p>🌡 Temperature: <span id="temp"></span> °C</p>
-        <p>💧 Humidity: <span id="humidity"></span>%</p>
-        <p>🌬 Wind Speed: <span id="wind"></span> km/h</p>
-        <p>☁ Condition: <span id="condition"></span></p>
-      </div>
+.metric {
+    display: flex;
+    flex-direction: column;
+}
 
-    </div>
+.label { font-size: 14px; color: #666; margin-bottom: 5px; }
+.value { font-size: 18px; font-weight: bold; color: #222; }
 
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+.spinner { font-style: italic; color: #007bff; margin: 15px 0; }
+.error-message { color: #dc3545; background: #f8d7da; padding: 10px; border-radius: 6px; margin: 15px 0; }
+.hidden { display: none !important; }
